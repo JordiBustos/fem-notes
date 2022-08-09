@@ -1,0 +1,11 @@
+Iteration:
+  Imperative.
+  Looping (for/while).
+  Stateful (value changing over time).
+
+Recursion:
+  Functional.
+  Self-referential.
+  Stateless.
+
+FP avois loops and use recursion

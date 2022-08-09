@@ -1,0 +1,21 @@
+Notes on https://www.youtube.com/watch?v=qTHGmVrOGZo&t=3s
+
+It's a mathematical formalism inveted by Alonzo Church 1932
+Universal model of computation (Turing-Complete)(NBD)
+
+With λ we can represent everything that is computable
+If we take => of JS as λ we can do it too
+
+
+                        |  λ                 | =>
+------------------------|-------------------------------------
+making one abstraction  |  λx.x              | x => x
+------------------------|-------------------------------------
+                        |
+faking multiple args    | λx.λy.x+y          | x => y => x + y
+------------------------|--------------------------------------
+                        |                    |
+using one application   |(λx.λy.x+y)5 1      |(x => y => x + y)(5)(1)
+                        |> 5 + 1             |
+                        |> 6                 |
+---------------------------------------------------------------

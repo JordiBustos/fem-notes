@@ -1,0 +1,273 @@
+@import url('https://fonts.googleapis.com/css2?family=Oxygen&family=Oxygen+Mono&display=swap');
+
+:root {
+    --black: #171321;
+    --dkblue: #0d314b;
+    --plum: #4b0d49;
+    --hotmag: #ff17e4;
+    --magenta: #e310cb;
+    --aqua: #86fbfb;
+    --white: #f7f8fa;
+    --font-size: 1.3rem;
+    --mono: "Oxygen mono", monospace;
+    --sans: "Oxygen", sans-serif;
+}
+
+html {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+img {
+    width: 100%;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family: var(--sans);
+    background-color: var(--black);
+    color: var(--white);
+    font-size: var(--font-size);
+}
+h1, h2, h3 {
+    margin:0;
+}
+a {
+    /* we keep text-decoration for accessibility */
+    color: var(--magenta);
+}
+a:hover {
+    color: var(--hotmag);
+    text-decoration: none;
+}
+
+.gradient {
+    background: linear-gradient(90deg, rgba(255,23,228,1) 0%, rgba(134,251,251,1) 100%);
+    height:2px;
+}
+
+/* navbar */
+nav {
+   font-family: var(--mono);
+   font-size: 80%; 
+   padding:1rem;
+}
+nav h1 a {
+    font-family: var(--sans);
+}
+nav ul {
+    list-style-type:none;
+    padding:0;
+    margin:0;
+    display:flex;
+    flex-flow:row wrap;
+    justify-content: center; /* horizontal axis */
+    align-items: center;     /* vertical axis */
+    gap: 2rem;               /* space between items */
+}
+nav li:first-child {
+    flex-basis:100%; /* only with flexbox -> is like width but for flexbox, get its own line */
+    text-align:center;
+}
+/* if the class contains fa- inside of it */
+nav [class*='fa-'] {
+    font-size:150%;
+    color: var(--aqua);
+}
+nav [class*='fa-']:hover {
+    color: var(--magenta);
+}
+nav h1 [class*='fa-'] {
+    font-size:100%;
+    color:var(--aqua);
+}
+nav a {
+    color: var(--white);
+    text-decoration: none;
+    display: block; /* by default a is inline element now is easily clickeable*/    
+}
+nav a:hover {
+    color: var(--magenta);
+}
+
+.button {
+    background-color: var(--magenta);
+    padding:.5rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-family: var(--mono);
+}
+.button:hover {
+    color: var(--white);
+    background-color: var(--hotmag)
+}
+
+@media only screen and (min-width:850px) {
+    nav {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    nav li:first-child {
+        flex-basis:auto;
+        text-align:left;
+        margin-right:auto;
+    }
+}
+
+/* intro styles */
+#intro {
+    padding: 4rem 1rem 10rem 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+#intro p {
+    font-size: 1rem;
+    line-height:1.5; /* 1.5 times font-size */
+}
+
+#intro .name {
+    font-family: var(--mono);
+}
+
+.name span {
+    font-family: var(--sans);
+    font-size: 4rem;
+    color: var(--aqua);
+    display: block;
+}
+
+#intro h2 {
+    font-size:3.8rem;
+    font-weight: 600;
+}
+
+/* project styles */
+.section-dkblue {
+    background-color: var(--dkblue);
+}
+
+#projects {
+    padding: 5rem 1rem;
+}
+#projects h2 {
+    font-size: 2.5rem;
+    margin-bottom: calc(2.5rem * 1.5);
+}
+#projects h3 {
+    color: var(--aqua);
+}
+#projects h4 {
+    font-size:1rem;
+    font-family: var(--mono);
+    margin: 0;
+}
+.blackbox {
+    background-color: var(--black);
+    padding: 1rem;
+    border-radius: 10px;
+    color:var(--white);
+    font-size: 1rem;
+    line-height: 1.5;
+}
+#projects ul {
+    list-style-type: none;
+    padding:0;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start; /* start of the row */
+    gap: 1rem;
+    font-size:1rem;
+}
+#projects img {
+    margin: 2rem 0 4rem 0;
+    border-left: 1px solid var(--aqua);
+    border-top: 1px solid var(--aqua);
+    border-radius: 25px;
+    padding:1rem;
+}
+
+@media (min-width:650px) {
+    article {
+        display: grid;
+        grid-template-columns: repeat(10, 1fr); /* 1 fraction of the screen each column */
+        gap: 1rem;
+    }
+    .regularImg {
+        grid-column: 1/6; /* takes 1 to 5 columns */
+        grid-row: 1/2;
+    }
+    .text {
+        text-align: right;
+        grid-column: 5/11; /* takes 5 to 10 column -> overlaps*/
+        grid-row: 1/2; /* manually set rows to avoid automatic reset */
+        order: 2; 
+    } 
+    .text2 {
+        text-align: left;
+        grid-column: 1/7;
+        grid-row:1/2;
+        order:1;
+    }
+    .reversedImage {
+        grid-column:6/11;
+        grid-row:1/2;
+    } 
+    #projects ul {
+        justify-content: flex-end;
+    }
+    .reversedUl {
+        justify-content: flex-start !important;
+    }
+}
+
+
+
+/* contact styles */
+#contact {
+    background-color: var(--plum);
+    text-align: center;
+    margin: 0 auto;
+    padding: 3rem 0;
+}
+#contact h2 {
+    font-size:1.8rem;
+    color: var(--white);
+}
+#contact p, #contact a {
+    color:white;
+}
+
+#contact p:last-child {
+    margin-top:3rem;
+}
+
+/* footer */
+#footer {
+    background-color: var(--black);
+    text-align: center;
+    margin: 0 auto;
+    padding: 5rem 0;
+}
+
+#footer ul {
+    padding:0;
+    margin:2rem 0;
+    display:flex;
+    flex-flow:row wrap;
+    justify-content: center; /* horizontal axis */
+    align-items: center;     /* vertical axis */
+    gap: 3rem;               /* space between items */
+    font-size: 175%;
+    list-style-type: none;
+}
+
+#footer p {
+    font-size:80%;
+}

@@ -1,0 +1,12 @@
+Promises:
+
+Special objects built into JS that get returned inmediately when we make a call to a web browser api/feature
+(e.g fetch) that's set up to return promises
+
+Act as a placeholder for the data we hope to get back
+from the web browser feature's background work
+
+We also attach the functionality we want to defer running until that background work is done
+
+Promise objects will automatically trigger that functionality to run and the value returned from the web browser
+will be that function's argument. This functionality is stored on a hidden property of the promise called on fulfillment (array of fns)

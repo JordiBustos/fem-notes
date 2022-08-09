@@ -1,0 +1,9 @@
+JavaScript is single threaded (one command executing at a time)
+and has synchronous execution model (each line is executed in order the code appears).
+
+So what if we need to wait some time before we can execute certain bits of code?
+Perhaps we need to wait on fresh data from an API/server request or for a time to complete
+and then execute our code.
+
+We have a conundrum -a tension between wanting to delay some code execution
+but not wanting to block the thread for any further code running while we wait.

@@ -1,0 +1,77 @@
+Responsive images:
+	
+	1. content choices - "art direction"
+
+	2. format - gif, jpg, png, svg, webp, avif...
+
+	3. pixel density
+
+	4. image display dimensions
+
+Best practices:
+	
+	Only one image should load even if many are specified
+
+---------------------------------------------------------
+Works for images that are small size
+<img src="big.jpg" alt="Big img">
+
+img {
+	width: 100%;
+	max-width:800px;
+}
+
+---------------------------------------------------------
+
+<picture> You decide what img show
+art direction -> show differents part of the same img
+
+<picture>
+  <source src="myImage.png" media="(min-width:850px)">
+
+  <img src="myImageCropped.png" alt="Alt of my image">
+</picture>
+
+---------------
+
+Webp better for optimization but may be not supported so
+
+<picture>
+	<source src="something.webp" type="image/webp">
+
+	<source src="something.png" type="image/png">
+
+	<img src="fallback.jpg" alt="some alt">
+</picture>
+---------------------------------------------------------
+
+<img src="small.jpg"
+     srcset="large.jpg 1024, medium.jpg 640w, small.jpg 320w"
+     sizes="(min-width: 36em) 33.3vw" alt="..."/>
+
+------------------------
+
+Picture:
+	Image optimized for content reasons matters more than technical reasons.
+	author chooses the best iamge.
+	Images may be very different in composition and dimension
+
+sizes, srscet:
+	Image optimized for technical reasons matter more than content reasons
+	Browser chooses the best image (depends of the context but can be bad).
+	Images vary in dimension but not composition.
+-----------------------------------------
+
+Put background images inside of media querys so that only one image will load under those conditions
+
+@media (max-width: 700px) {
+  body {
+	background-image: url(small_image.jpg);
+  }
+}
+
+@media (min-width: 701px) {
+  body {
+	background-image: url(large_image.jpg);
+  }
+}

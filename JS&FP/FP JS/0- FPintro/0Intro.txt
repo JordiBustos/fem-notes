@@ -1,0 +1,15 @@
+Functional programming is a
+    - coding style supported by some languages
+    - programming paradigm
+Haskell F# Elm Scala Clojure Erlang OCaml
+
+JavaScript -> good to learn functional programming
+
+It's based on pure functions:
+  only input in
+  only output out
+
+A side effects occurs at any time that the function has relation with the outside world
+search for information, log at the console, etc.
+
+Pure function doesn't have any side effects

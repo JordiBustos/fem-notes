@@ -1,0 +1,17 @@
+Clarifying inheritance
+
+In classical oriented languages C++, Java, etc:
+    When you make a class Workshop and you instatiate it, you are
+    conceptually and some times physically copying down into those instances
+
+    And when we make child classes that extends from workshop we are copying down into that again
+    And when we instantiate the child class we are making more copies
+
+
+Prototypal Inheritance:
+  We have Workshop.prototype object and then we make another object that are linked to Workshop.prototype
+  The child prototypes and its instances are linked too to Workshop.prototype
+
+
+  JavaScript "inheritance" -> "Behavior Delegation"
+                              It's not a class system
